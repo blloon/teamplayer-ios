@@ -8,12 +8,20 @@
 
 import UIKit
 import XCTest
+//@testable //swift 2
+import TeamSounds
 
 class TeamSoundsTests: XCTestCase {
+    
+    var viewController: SearchViewController!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        viewController = sb.instantiateViewControllerWithIdentifier("SearchViewController") as! SearchViewController
+        let _ = viewController.view //make sure view loaded
     }
     
     override func tearDown() {
@@ -21,16 +29,27 @@ class TeamSoundsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testTableViewReadySet() {
+        
+        XCTAssertNotNil(viewController.tableView, "tableView should be loaded")
+        XCTAssertNotNil(viewController.tableView.dataSource, "datasource not set")
+        XCTAssertNotNil(viewController.tableView.delegate, "delegate not set!")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testSearchBarReady() {
+        
+        XCTAssertNotNil(viewController.searchBar, "searchBar should be loaded")
+        XCTAssertTrue(count(viewController.searchBar.text) == 0, "Search bar should be empty at start")
+    }
+    
+    func testSCEngineReady() {
+        
+        
+        
+    }
+    
+    func testSCEngineSearchResultType() {
+        
     }
     
 }

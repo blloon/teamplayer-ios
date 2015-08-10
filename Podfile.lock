@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (1.3.0)
+  - FLAnimatedImage (1.0.8)
+  - PINCache (2.0)
+  - PINRemoteImage (1.0):
+    - FLAnimatedImage (>= 1.0)
+    - PINCache (>= 2.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 1.0)
+  - PINRemoteImage (~> 1.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 220403a8d5840e0b4c946a6fbaf209dbca124282
+  FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
+  PINCache: ca953ba93ce1edde056fdd99121ee65b295a08c9
+  PINRemoteImage: dd0126a7dd6f00191199ac090cb8c914049812f3
+
+COCOAPODS: 0.37.1
